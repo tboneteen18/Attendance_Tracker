@@ -2,7 +2,7 @@ class AdminsController < ApplicationController
   before_action :find_admin, only: [:edit, :show, :update, :destroy] 
 
   def index
-    @admin = Admin.all
+    @admins = Admin.all
   end
 
   def new
