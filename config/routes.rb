@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'teachers/index'
+
+  get 'teachers/new'
+
+  get 'teachers/create'
+
+  get 'teachers/show'
+
+  get 'teachers/edit'
+
+  get 'teachers/update'
+
+  get 'teachers/destroy'
+
+  get 'admins/index'
+
+  get 'admins/new'
+
+  get 'admins/create'
+
+  get 'admins/show'
+
+  get 'admins/update'
+
+  get 'admins/edit'
+
+  get 'admins/destroy'
+
   devise_for :students
   devise_for :teachers
   devise_for :admins
@@ -7,6 +35,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  resources :admins
+  resources :teachers
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
