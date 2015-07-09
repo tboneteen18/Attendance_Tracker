@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
   before_action :find_teacher, only: [:show, :edit, :update, :destroy]
   def index
-    @teacher = Teacher.all
+    @teachers = Teacher.all
   end
 
   def new
