@@ -26,6 +26,8 @@ class TeachersController < ApplicationController
   end
 
   def destroy
+    @teacher.destroy
+    redirect_to 
   end
 
   private
