@@ -1,31 +1,59 @@
 Rails.application.routes.draw do
-  get 'teachers/index'
+  # get 'activities/index'
 
-  get 'teachers/new'
+  # get 'activities/new'
 
-  get 'teachers/create'
+  # get 'activities/create'
 
-  get 'teachers/show'
+  # get 'activities/show'
 
-  get 'teachers/edit'
+  # get 'activities/edit'
 
-  get 'teachers/update'
+  # get 'activities/update'
 
-  get 'teachers/destroy'
+  # get 'activities/destroy'
 
-  get 'admins/index'
+  # get 'students/index'
 
-  get 'admins/new'
+  # get 'students/new'
 
-  get 'admins/create'
+  # get 'students/create'
 
-  get 'admins/show'
+  # get 'students/edit'
 
-  get 'admins/update'
+  # get 'students/show'
 
-  get 'admins/edit'
+  # get 'students/update'
 
-  get 'admins/destroy'
+  # get 'students/destroy'
+
+  # get 'teachers/index'
+
+  # get 'teachers/new'
+
+  # get 'teachers/create'
+
+  # get 'teachers/show'
+
+  # get 'teachers/edit'
+
+  # get 'teachers/update'
+
+  # get 'teachers/destroy'
+
+  # get 'admins/index'
+
+  # get 'admins/new'
+
+  # get 'admins/create'
+
+  # get 'admins/show'
+
+  # get 'admins/update'
+
+  # get 'admins/edit'
+
+  # get 'admins/destroy'
 
   devise_for :students
   devise_for :teachers
@@ -37,6 +65,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :admins
   resources :teachers
+  resources :students
+  resources :activities
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
