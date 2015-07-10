@@ -9,6 +9,11 @@ class StudentsController < ApplicationController
   end
 
   def create
+    if @student.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,9 +23,17 @@ class StudentsController < ApplicationController
   end
 
   def update
+    if @student.update(student_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    if @student.destroy
+      redirect_to root_path
+    end
   end
 
   private

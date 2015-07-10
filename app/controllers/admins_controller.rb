@@ -21,12 +21,21 @@ class AdminsController < ApplicationController
   end
 
   def update
+    if @admin.update(admin_params)
+      redirect_to root_path
+    else 
+      render :edit
+    end
   end
 
   def edit
   end
 
   def destroy
+    if @admin.destroy
+      redirect_to root_path
+    end    
+
   end
 
   private

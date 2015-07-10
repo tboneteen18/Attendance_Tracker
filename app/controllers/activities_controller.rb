@@ -9,6 +9,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    if @activity.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -18,9 +23,17 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+    if @activity.update(activity_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    if @activity.destroy
+      redirect_to root_path
+    end
   end
 
   private
