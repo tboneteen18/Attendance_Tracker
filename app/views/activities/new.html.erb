@@ -1,2 +1,23 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h1 class="page-header text-center">Create New Activity</h1>
+      <%= form_for(@activity, html: {multipart: true}) do |activity| %>
+        <div class="form-group">
+          <p>Name: <%= activity.text_field :name, class: 'form-control' %></p>
+        </div>
+        <div class="form-group">
+          <p>Date: <%= activity.text_area :date, class: 'form-control'%></p>
+        </div>
+        <div class="form-group">
+          <p>Time: <%= activity.text_field :time, class: 'form-control' %></p>
+        </div>
+        <div class="form-group">
+          <p>Location: <%= activity.text_field :location, class: 'form-control' %></p>
+        </div>
+        <div>
+          <p><%= activity.submit('Save Activity', class: 'btn btn-default')%></p>
+        </div>
+      <% end %>
+  </div>
+</div>
+
