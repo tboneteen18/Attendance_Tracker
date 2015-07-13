@@ -5,11 +5,11 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    @activity = Activity.new(activity_params)
+    @activity = Activity.new
   end
 
   def create
-    if @activity.save
+    if @activity.save(activity_params)
       redirect_to root_path
     else
       render :new
@@ -33,6 +33,8 @@ class ActivitiesController < ApplicationController
   def destroy
     if @activity.destroy
       redirect_to root_path
+    else
+       flash[:notice] = "Something went wrong Data not deleted"
     end
   end
 
