@@ -1,59 +1,4 @@
 Rails.application.routes.draw do
-  # get 'activities/index'
-
-  # get 'activities/new'
-
-  # get 'activities/create'
-
-  # get 'activities/show'
-
-  # get 'activities/edit'
-
-  # get 'activities/update'
-
-  # get 'activities/destroy'
-
-  # get 'students/index'
-
-  # get 'students/new'
-
-  # get 'students/create'
-
-  # get 'students/edit'
-
-  # get 'students/show'
-
-  # get 'students/update'
-
-  # get 'students/destroy'
-
-  # get 'teachers/index'
-
-  # get 'teachers/new'
-
-  # get 'teachers/create'
-
-  # get 'teachers/show'
-
-  # get 'teachers/edit'
-
-  # get 'teachers/update'
-
-  # get 'teachers/destroy'
-
-  # get 'admins/index'
-
-  # get 'admins/new'
-
-  # get 'admins/create'
-
-  # get 'admins/show'
-
-  # get 'admins/update'
-
-  # get 'admins/edit'
-
-  # get 'admins/destroy'
 
   devise_for :students
   devise_for :teachers
@@ -63,9 +8,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  resources :admins
-  resources :teachers
-  resources :students
   resources :activities
 
 
