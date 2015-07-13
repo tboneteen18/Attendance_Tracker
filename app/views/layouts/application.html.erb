@@ -6,6 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+      <%= link_to "Admin Login", new_admin_session_path %>
+    </div>
+  </div>
+  </nav>
+</header>
+
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
