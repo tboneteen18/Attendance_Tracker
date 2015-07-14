@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709235916) do
+ActiveRecord::Schema.define(version: 20150714202838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20150709235916) do
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "encrypted_password",     default: ""
     t.integer  "grade_level"
     t.string   "parent_name"
     t.integer  "phone_number"
@@ -76,15 +76,26 @@ ActiveRecord::Schema.define(version: 20150709235916) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
+  add_index "students", ["invitation_token"], name: "index_students_on_invitation_token", unique: true, using: :btree
+  add_index "students", ["invitations_count"], name: "index_students_on_invitations_count", using: :btree
+  add_index "students", ["invited_by_id"], name: "index_students_on_invited_by_id", using: :btree
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
     t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -95,9 +106,20 @@ ActiveRecord::Schema.define(version: 20150709235916) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
   end
 
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
+  add_index "teachers", ["invitation_token"], name: "index_teachers_on_invitation_token", unique: true, using: :btree
+  add_index "teachers", ["invitations_count"], name: "index_teachers_on_invitations_count", using: :btree
+  add_index "teachers", ["invited_by_id"], name: "index_teachers_on_invited_by_id", using: :btree
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
 
 end

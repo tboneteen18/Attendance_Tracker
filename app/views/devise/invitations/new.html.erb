@@ -1,11 +1,30 @@
-<h2><%= t "devise.invitations.new.header" %></h2>
-
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+<h2>Send Student invitation</h2>
+<p>
+  test
+</p>
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name, account: 'student'), :html => {:method => :post}, admin: {account: 'student'} do |f| %>
   <%= devise_error_messages! %>
 
 <% resource.class.invite_key_fields.each do |field| -%>
   <p><%= f.label field %><br />
   <%= f.text_field field %></p>
+
+
+<% end -%>
+
+  <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
+<% end %>
+
+<h2>Send Student invitation</h2>
+
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name, account: 'teacher'), :html => {:method => :post}, account: 'teacher' do |f| %>
+  <%= devise_error_messages! %>
+
+<% resource.class.invite_key_fields.each do |field| -%>
+  <p><%= f.label field %><br />
+  <%= f.text_field field %></p>
+
+
 <% end -%>
 
   <p><%= f.submit t("devise.invitations.new.submit_button") %></p>

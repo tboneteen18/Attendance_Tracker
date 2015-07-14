@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :students
   devise_for :teachers
-  devise_for :admins
+  devise_for :admins, :controllers => { :invitations => 'admins/invitations' }
+  post '/teacher-invitations' => 'admins/invitations#createTeacher', as: :admin_teacher_invitation
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   resources :activities
