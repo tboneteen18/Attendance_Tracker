@@ -6,13 +6,13 @@
           <p>Name: <%= activity.text_field :name, class: 'form-control' %></p>
         </div>
         <div class="form-group">
-          <p>Description: <%= activity.text_area :description, class: 'form-control'%></p>
+          <p>Location: <%= activity.text_field :location, class: 'form-control'%></p>
         </div>
         <div class="form-group">
-          <p>Location: <%= activity.text_field :location, class: 'form-control' %></p>
+          <p>Time: <%= activity.text_field :time, class: 'form-control' %></p>
         </div>
         <div class="form-group">
-          <p>Upload an Image: <%= activity.file_field :image %></p>
+          <p>Date: <%= activity.text_field :date, class: 'form-control' %></p>
         </div>
         <div>
           <p><%= activity.submit('save activity', class: 'btn btn-default')%></p>
