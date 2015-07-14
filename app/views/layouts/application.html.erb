@@ -2,10 +2,25 @@
 <html>
 <head>
   <title>AttendanceTracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
+<header>
+  <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="/">Home</a></li>
+  <li role="presentation" class="active"><a href="/admins/sign_in">Admin Login</a></li>
+  <li role="presentation" class="active"><a href="/teachers/sign_in">Teacher Login</a></li>
+  <li role="presentation" class="active"><a href="/students/sign_in">Student Login</a></li>
+  <li role="presentation" class="active"><a href="/activities">List of Activities</a></li>
+</ul>
+</header>
+
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
