@@ -14,10 +14,10 @@
       </tr>
       <% @activities.each do |item| %>
        <tr>
-          <td> <%= activity.name %> </td>
-          <td> <%= activity.date %> </td>
-          <td> <%= activity.time %> </td>
-          <td> $<%= activity.locatioon %> </td>
+          <td> <%= item.name %> </td>
+          <td> <%= item.date %> </td>
+          <td> <%= item.time %> </td>
+          <td> <%= item.location %> </td>
 
           <td>
             <%= link_to activity_path(activity.id), class: "btn btn-info" do %>
