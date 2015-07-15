@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'student_logged_in/index'
+
+  get 'student_logged_in/show'
+
   devise_for :students
   devise_for :teachers
   devise_for :admins, :controllers => { :invitations => 'admins/invitations' }
