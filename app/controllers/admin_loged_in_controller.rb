@@ -4,4 +4,6 @@ class AdminLogedInController < ApplicationController
 
   def show
   end
+
+  private
 end
