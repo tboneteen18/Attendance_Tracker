@@ -1,16 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :student_loged_in, only: [:show, :index]
+  resources :student_loged_in, only: [:index, :show]
+  resources :admin_loged_in, only: [:index, :show]
+  resources :teacher_loged_in, only: [:index, :show]
 
-  get 'teacher_loged_in/index'
-
-  get 'teacher_loged_in/show'
-
-  get 'admin_loged_in/index'
-
-  get 'admin_loged_in/show'
-
-  devise_for :students, controllers: {:registrations => 'students/registrations'}
+  devise_for :students
   devise_for :teachers
   devise_for :admins, :controllers => { :invitations => 'admins/invitations' }
   post '/teacher-invitations' => 'admins/invitations#createTeacher', as: :admin_teacher_invitation
