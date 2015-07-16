@@ -4,7 +4,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
 
   protected
   def after_sign_up_path_for(resource)
-    student_loged_in_path(@current_user.id)
+    student_logged_in_path(@current_user.id)
   end
 
   # GET /resource/sign_up

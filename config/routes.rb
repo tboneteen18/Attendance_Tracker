@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :student_loged_in, only: [:index, :show]
-  resources :admin_loged_in, only: [:index, :show]
-  resources :teacher_loged_in, only: [:index, :show]
+  resources :student_logged_in, only: [:index, :show]
+  resources :admin_logged_in, only: [:index, :show]
+  resources :teacher_logged_in, only: [:index, :show]
 
   devise_for :students
   devise_for :teachers

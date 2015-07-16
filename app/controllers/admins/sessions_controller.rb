@@ -1,6 +1,6 @@
 class Admins::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
-  
+
 
   # GET /resource/sign_in
   # def new
@@ -10,7 +10,7 @@ class Admins::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   # def create
   #   super
-  #   # redirect_to admin_loged_in_index_path
+  #   # redirect_to admin_logged_in_index_path
   # end
 
   # DELETE /resource/sign_out
@@ -20,7 +20,7 @@ class Admins::SessionsController < Devise::SessionsController
 
   # protected
 
-  
+
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
