@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'student_loged_in/index'
-
-  get 'student_loged_in/show'
+  resources :student_loged_in, only: [:show, :index]
 
   get 'teacher_loged_in/index'
 
@@ -12,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'admin_loged_in/show'
 
-  devise_for :students
+  devise_for :students, controllers: {:registrations => 'students/registrations'}
   devise_for :teachers
   devise_for :admins, :controllers => { :invitations => 'admins/invitations' }
   post '/teacher-invitations' => 'admins/invitations#createTeacher', as: :admin_teacher_invitation

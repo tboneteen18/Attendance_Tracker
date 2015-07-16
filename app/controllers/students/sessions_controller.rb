@@ -1,7 +1,10 @@
 class Students::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
-  def after_sign_in_path_for(resource)
-    "www.google.com"
+
+
+  protected
+  def after_sign_up_path_for(resource)
+    student_loged_in_path(@current_user.id)
   end
 
   # GET /resource/sign_in

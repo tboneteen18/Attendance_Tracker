@@ -2,6 +2,11 @@ class Students::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
+  protected
+  def after_sign_up_path_for(resource)
+    student_loged_in_path(@current_user.id)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
