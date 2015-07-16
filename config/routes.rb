@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'student_loged_in/index'
-
-  get 'student_loged_in/show'
-
-  get 'teacher_loged_in/index'
-
-  get 'teacher_loged_in/show'
-
-  get 'admin_loged_in/index'
-
-  get 'admin_loged_in/show'
+  resources :student_loged_in, only: [:index, :show]
+  resources :admin_loged_in, only: [:index, :show]
+  resources :teacher_loged_in, only: [:index, :show]
 
   devise_for :students
   devise_for :teachers
